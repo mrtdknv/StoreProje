@@ -1,12 +1,33 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const navigation = [
-  { name: "Home", href: "/", current: false },
-  { name: "About", href: "/about", current: false },
+  { name: "home", href: "/", current: false },
+  { name: "about", href: "/about", current: false },
 ];
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { t, i18n } = useTranslation(); // i18n ve t değişkenlerini tanımla
+
+  const clickHandle = async (lang) => {
+    await i18n.changeLanguage(lang);
+  };
+
+  // Navigation dizisini çeviri fonksiyonu ile doldur
+  const translatedNavigation = navigation.map((item) => ({
+    ...item,
+    name: t(item.name),
+  }));
+
+  const [theme, setTheme] = useState("light");
+
+  const changeTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else document.documentElement.classList.remove("dark");
+  };
 
   return (
     <nav className="bg-gray-800">
@@ -20,7 +41,7 @@ function Navbar() {
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-                {navigation.map((item, index) => (
+                {translatedNavigation.map((item, index) => (
                   <a
                     key={index}
                     href={item.href}
@@ -76,6 +97,24 @@ function Navbar() {
               </svg>
             </button>
           </div>
+
+          <div className="flex items-center space-x-4">
+            <button
+              className="text-white"
+              onClick={() => clickHandle("tr")} // TR butonu
+            >
+              TR
+            </button>
+            <button
+              className="text-white"
+              onClick={() => clickHandle("en")} // EN butonu
+            >
+              EN
+            </button>
+            <button className="bg-violet-800" onClick={changeTheme}>
+              Tema
+            </button>
+          </div>
         </div>
       </div>
 
@@ -84,7 +123,7 @@ function Navbar() {
         id="mobile-menu"
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          {navigation.map((item, index) => (
+          {translatedNavigation.map((item, index) => (
             <a
               key={index}
               href={item.href}
@@ -99,6 +138,7 @@ function Navbar() {
             </a>
           ))}
         </div>
+        <div className="flex"></div>
       </div>
     </nav>
   );
