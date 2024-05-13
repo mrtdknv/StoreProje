@@ -7,6 +7,7 @@ function Home() {
   return (
     <div>
       <h3>{t("hello")}</h3>
+      <button className="w-24 h-16 bg-buttonColor">asddsads </button>
     </div>
   );
 }

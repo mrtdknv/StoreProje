@@ -9,24 +9,22 @@ module.exports = {
   plugins: [
     createThemes({
       halloween: {
-        primary: "orange",
-        secondary: "yellow",
-        buttonColor: "red",
+        primary: "gray", //buton renggi
+        secondary: "black", //bellideğil
+        buttonColor: "red", // arka plan
+        textColor: "white",
       },
       summer: {
-        primary: "pink",
-        secondary: "red",
+        primary: "red",
+        secondary: "green",
         buttonColor: "blue",
+        textColor: "yellow",
       },
       winter: {
-        primary: "blue",
-        secondary: "green",
-        buttonColor: "red",
-      },
-      party: {
-        primary: "steelblue",
-        secondary: "darkblue",
-        buttonColor: "red",
+        primary: "red",
+        secondary: "yellow",
+        buttonColor: "black",
+        textColor: "pink",
       },
     }),
   ],
