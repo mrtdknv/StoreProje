@@ -9,14 +9,10 @@ const HomeLayout = ({ children }) => {
     setDarkTheme(!darkTheme);
   };
 
-  const backgroundClassName = darkTheme
-    ? "bg-orange-600 text-slate-600 dark:bg-slate-600"
-    : "bg-slate-600 dark:bg-orange-600";
-
   return (
     <div>
       <Navbar />
-      <div className={`h-full w-full min-h-screen ${backgroundClassName}`}>
+          <div className={`h-full w-full min-h-screen bg-buttonColor`}>
         {children}
       </div>
       <Footer />

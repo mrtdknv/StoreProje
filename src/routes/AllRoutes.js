@@ -3,7 +3,7 @@ import RouteModels from "./RouteModels";
 
 function AllRoutes() {
   return (
-    <div>
+    <div >
       <BrowserRouter>
         <Routes>
           {RouteModels.map((route, index) => (
