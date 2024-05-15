@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { changeActiveTheme } from "../../redux/datas/themeSlice";
+import { current } from "@reduxjs/toolkit";
 
 const navigation = [
   { name: "home", href: "/", current: false },
-  { name: "about", href: "/about", current: false },
+  { name: "login", href: "/login", current: false },
+  { name: "register", href: "/register", current: false },
 ];
 
 function Navbar() {
@@ -174,13 +176,6 @@ function Navbar() {
                   }}
                 >
                   summer
-                </li>
-                <li
-                  onClick={() => {
-                    handleChangeTheme("winter");
-                  }}
-                >
-                  winter
                 </li>
               </ul>
             </div>

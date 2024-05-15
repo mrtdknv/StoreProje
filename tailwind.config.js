@@ -9,22 +9,27 @@ module.exports = {
   plugins: [
     createThemes({
       halloween: {
-        primary: "gray", //buton renggi
-        secondary: "black", //bellideğil
-        buttonColor: "red", // arka plan
+        primary: "#1d2c51", //arka plan
+        secondary: "black", //ikinci renk
+        buttonColor: "#1e6091", // buton renkleri
         textColor: "white",
+        logincardbg: "#193350",
+        buttontextColor: "white",
+
+        shadow: "white",
+        text: "white",
+        logininputbg: "#1e293b",
       },
       summer: {
-        primary: "red",
+        primary: "#c6d3de",
         secondary: "green",
         buttonColor: "blue",
-        textColor: "yellow",
-      },
-      winter: {
-        primary: "red",
-        secondary: "yellow",
-        buttonColor: "black",
-        textColor: "pink",
+        buttontextColor: "white",
+        textColor: "black",
+        logincardbg: "white",
+        shadow: "black",
+        text: "#1d2c51",
+        logininputbg: "#edf2f4",
       },
     }),
   ],
